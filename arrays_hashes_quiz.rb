@@ -11,6 +11,8 @@
 # 3. How many ways can we return 'Princes Street' from the array?
 # puts lines[4]
 # puts lines[-1]
+# puts lines.last
+# puts lines.at(4)
 
 # 4. Work out the index position of 'Haymarket'
 # puts lines.index("Haymarket")
@@ -40,9 +42,11 @@
 # p my_hash[:two]
 # 3. How would you return the number `2`?
 # p my_hash.fetch("two")
+
 # 4. How would you add `{3 => "Three"}` to the hash?
-# p my_hash.merge({[:3] => "Three"})
+# my_hash[3] = "Three"
 # 5. How would you add `{:four => 4}` to the hash?
+# my_hash[:four] = 4
 
 ### C. Given the following data structure:
 
@@ -80,29 +84,38 @@ users = {
 
 # 1. Return Jonathan's Twitter handle (i.e. the string `"jonnyt"`)
 # p users["Jonathan"][:twitter]
+
 # 2. Return Erik's hometown
 # puts users["Erik"][:home_town]
+
 # 3. Return the array of Erik's favorite numbers
 # p users["Erik"][:favourite_numbers]
+
 # 4. Return the type of Avril's pet Colin
 # puts users["Avril"][:pets]["colin"]
+
 # 5. Return the smallest of Erik's favorite numbers
 # p users["Erik"][:favourite_numbers].sort.first
+# 
 # 6. Add the number `7` to Erik's favorite numbers
+# p users["Erik"][:favourite_numbers] << 7
 # p users["Erik"][:favourite_numbers].insert(1, 7)
+
 # 7. Change Erik's hometown to Edinburgh
-# puts users["Erik"][:home_town] = [:Edinburgh]
+# puts users["Erik"][:home_town] = "Edinburgh"
+
 # 8. Add a pet dog to Erik called "Fluffy"
-# puts users["Erik"][:pets]["Fluffy"] = [:dog]
+# p users["Erik"][:pets]["Fluffy"] = :dog
 # 
 ###Note - i've had trouble with adding hash to hash.....chat tomorrow. Thanks C
+
 # 9. Add yourself to the users hash
-# p users.merge = {
-#   "Craig" => {
-#     :twitter => "pickles",
-#     :favourite_numbers => [11, 19, 95, 38],
-#     :home_town => "Portobello",
-#     :pets => {
-#       "A&L" => :child
-#       }
-#   }
+users["Craig"] = {
+    :twitter => "pickles",
+    :favourite_numbers => [11, 19, 95, 38],
+    :home_town => "Portobello",
+    :pets => {
+      "A&L" => :child
+      }
+  }
+  puts users["Craig"]
